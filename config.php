@@ -1,13 +1,3 @@
 <?php
-
-
-//Masukkan deviceid saja
-$ID = "xxxxxxxxxxxxxxxx";
-
-
-
-
-
-
-
+$ID = "xxxxxxxxxxxxxxxx"; // Masukkan deviceid saja
 ?>

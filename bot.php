@@ -1,14 +1,125 @@
 <?php
-$banner = "
-┏━┛┏━┃┏━┃┏━┃┛┃ ┃
-┃ ┃┃ ┃┏━┛┏┏┛┃ ┛
-━━┛━━┛┛  ┛ ┛┛┛ ┛";
-$i1i='========================================================================
-	Obfuscation provided by Unknowndevice64 - Free Online PHP Obfuscator
-				http://www.ud64.com/
-==============================================================================';
+$u = "\e[1;35m";
+$c = "\e[1;36m";
+$g = "\e[1;32m";
+$r = "\e[1;31m";
+$p = "\e[1;37m";
+$b = "\e[1;34m";
+$h = "\e[1;30m";
 
+include ('config.php');
+include ('modul.php');
 
-$uD64_c0m="\163\164\x72\x5f\162\x6f\164"."13";$uD64_Com="\147\x7a\151\x6e\x66\x6c\141\164\x65";$uD64_C0m="\142\x61\x73\14564\x5f\x64\x65\143o\144\145";$x0zRy=$uD64_Com($uD64_C0m($uD64_c0m("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")));@eval($uD64_c0m('$k0xEm="MIKoogf4RC2IbhuQv7kDwh0xXNdfYMTcYdESpbnBQY8Hmd5fHdaGyIgqia7Uqv8C+2NL5CNZm5xmUY0oJYGcC70ST75dfJPT8n4L09plzsdIFT/GjJPEBYBBVlvth0aUiIBQaQd/b7v+mqwFesNFGlE0eElKSU9rhCcISpWcgTjfemtxKUNkT3YEiuWBX/68yCM+lX/kc0g86NHXscVQ3cpUBGBj85aDW+ARSDq2Ztq2KlFlD9tE390cp0gGJZa0LJnyd9iZAcKvPeJ/4ScUhNXeJEy3bkYIJp+6jNfie6QYNnn+iBcpS/nft01JSk37dj6dQ7e6cRq+hqqq7d0bY90Y8hSnW32gR6GUqsrdpiiZZGTseMH/5PRjMqKPWr6mpsYx6A7ltR3hwpippMVkoNchAzfVGD58oud+y2TwcB0nnoSGQo6F7eavbISB7yCYNz0mj3TDfBgKxRoFuwgQqInjnjes+gGgEuK6QrRsZduhQpv5jsOQ2L2PWV1XglCqKIuQBapviPu8mcEspdEmTEWsZT6qBSst7fRW7dJKr+K5cUFYFR+JGwXmV33pRI8IVv2QwvmcYzA8fRCap8N2N7rEQHM26ASMoOKU76gD9poeS4Ow5PQ6bbXrFKQPPVkVq1/T+aGTy7QbZmOCcWhcjCd8jK5AsWJqZwsjHE00+qNVFK2vVUlGbTeaf0sR9g4VmzDjFfXZT1rCWb6dSrW+sMv+TXumfA2xRWdcWZlcCcUlwaGKq9aVwjeVA9PZ6wOD3p/phO2mEkQ1DSbw0v1xje2lZaXADQznQFkV9jSs8kTQj3oZzXyXjAana57Vj7yx6OKKHD4aDK53cUILrLCeERLeVC9gzXjTg1F2vmYUOjKAJsr9fgtbkVppcbk8w/DtPfWyqfGoNxXUV+4IIN+LHTHkmUQxH4a6IL36kHX4ZooKuGrvTA3wRjolT4ZHLMnEa4JiMfJMN9O9moWnZsVW5ZGn7bMpGrIV/OZqRSzaNi9KPExIKw0P8UfQYOGkEvy631Xb5EeBsqX2FbFbCWwa3YqAEwtKry16b6wBY9GKmNKrlbM8FacUp2nvJCurObkVkjGqLaFPAnE7Vtq2FmvBb3Tycs4vidKLYTIPojMbCbUEEHm8LY+2HRKHe0qSeLnHA7sIDknmgiEd6Ho5yq7WJKrGtz4ILSrT3Fxs0jzv7dv2K2Iv1NbJxlsOwcc132EpEp7KR+G17/zxoR0qfitme6wR+FUg13UK5X5zBvj5mnz99ABzhhQZ+IlJQfsOpBcASgHe2Z00gNsA9H068VS0Zk3sQ9KCArxzi0kXp2AkzEhDsxf9mn0LK9qr/8DWJjMIJ3iW+93SDcELAENsQm/a3urSJs1x6/Z6Yj9asfrW/Z1iWhjsKqadS46SbsDMi+DIoI4gwc/rsama2oNWa95hb+aggc//f41z821/A6s1wC4a22t+3sLm2c+s1/Fw9FH2i6Jmq7/JyBajBkBucuTqCzrporsm7n8p0+yy53/Li/7+8nI58/7Ayp37n6e37l5seN8sCam8Qj==";@riny(tmvasyngr(onfr64_qrpbqr($k0xEm)));'));
+$url1 = "http://apkshery.freyst.com/isUserPresent.php";
+$url2 = "http://apkshery.freyst.com/alldata.php";
+$url3 = "http://apkshery.freyst.com/displaybalance.php";
 
+$h1   = array();
+$h1[] = "Content-Type: application/x-www-form-urlencoded";
+$h1[] = "User-Agent: Dalvik/2.1.0 (Linux; U; Android 6.0; iCherry C230 Build/iCherry_C230)";
+$h1[] = "Content-Length: 25";
+
+$h2   = array();
+$h2[] = "Content-Type: application/x-www-form-urlencoded";
+$h2[] = "User-Agent: Dalvik/2.1.0 (Linux; U; Android 6.0; iCherry C230 Build/iCherry_C230)";
+$h2[] = "Content-Length: 23";
+
+$h3   = array();
+$h3[] = "Content-Type: application/x-www-form-urlencoded";
+$h3[] = "User-Agent: Dalvik/2.1.0 (Linux; U; Android 6.0; iCherry C230 Build/iCherry_C230)";
+$h3[] = "Content-Length: 23";
+
+$data1 = "DeviceId=$ID";
+$data2 = "device=$ID";
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url1);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $h1);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+$respon = curl_exec($ch);
+curl_close($ch);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url2);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $h2);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data2);
+$respon = curl_exec($ch);
+curl_close($ch);
+$t1 = json_decode($respon, true);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url3);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $h3);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data2);
+$res = curl_exec($ch);
+curl_close($ch);
+$t2 = json_decode($res, true);
+
+echo $g,$banner;
+sleep(1);
+echo $c."\n[".$p."================".$c."[".$u." WELCOME ".$c."]".$p."================".$c."]\n";
+echo "[".$p."•".$c."]> ".$g."Creator    : Mr.".$b."Tricks  ".$g."||".$p." Sript Nuyul \n";
+echo $c."[".$p."•".$c."]> ".$g."My Channel : ".$p."Mr.Minimax".$g." || ".$r."Goprix        \n";
+echo $c."[".$p."================".$c."[".$u."  SCRIPT ".$c."]".$p."================".$c."]\n\n";
+sleep(2);
+echo $g."Mulai ".$c;
+
+if ($t1["result"][0]["Email"] == true) {
+    echo "•";
+    sleep(1);
+    echo "•";
+    sleep(1);
+    echo "•";
+    sleep(1);
+    echo $r."!";
+    sleep(1);
+    echo $g."\nData True\n\n";
+    sleep(1);
+    echo $g."NickName :".$c." ".$t1["result"][0]["Username"]."\n";
+    echo $g."Ballance :".$u." ".$t2["result"][0]["CurrentBalance"]."\n";
+    echo $g."Kode Reff:".$r." ".$t1["result"][0]["ReferCode"]."\n";
+    echo $g."Email :".$h." ".$t1["result"][0]["Email"]."\n\n";
+} else {
+    echo $r."Invalid deviceID or Check your Internet Connection \n";
+}
+
+echo $g."Pilih yang mana :\n";
+echo $p."[".$u."1".$p."]> ".$h."Kunjungi Web\n";
+echo $p."[".$u."2".$p."]> ".$h."Nonton Video\n\n";
+echo $b."masukkan".$r." nomor".$c." ";
+$level = trim(fgets(STDIN));
+echo $b."Masukkan".$r." jumlah".$c." ";
+$jum = trim(fgets(STDIN));
+
+switch ($level) {
+    case 1:
+        $an = 0;
+        while ($an < $jum) {
+            $an++;
+            web($ur1, $pos1, $ua1, $r, $g, $p, $u, $c, $h);
+            sleep(34);
+        }
+        echo $g."Selesai sudah".$r." ".$jum."".$u." Kali\n";
+        break;
+
+    case 2:
+        for ($ui = 0; $ui < $jum; $ui++) {
+            video($ur2, $ua2, $pos2, $r, $u, $g, $p, $u, $c);
+            sleep(32);
+        }
+        echo $g."Seleai sudah".$r." ".$jum." ".$u."Kali\n";
+        break;
+}
 ?>

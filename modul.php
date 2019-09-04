@@ -1,11 +1,51 @@
 <?php
+$ur1 = "http://apkshery.freyst.com/addwalletWeb.php";
+$ur2 = "http://apkshery.freyst.com/addwallet.php";
 
-$i1i='========================================================================
-	Obfuscation provided by Unknowndevice64 - Free Online PHP Obfuscator
-				http://www.ud64.com/
-==============================================================================';
+$ua1   = array();
+$ua1[] = "Content-Type: application/x-www-form-urlencoded";
+$ua1[] = "User-Agent: Dalvik/2.1.0 (Linux; U; Android 6.0; iCherry C230 Build/iCherry_C230)";
+$ua1[] = "Content-Length: 35";
 
+$ua2   = array();
+$ua2[] = "Content-Type: application/x-www-form-urlencoded";
+$ua2[] = "User-Agent: Dalvik/2.1.0 (Linux; U; Android 6.0; iCherry C230 Build/iCherry_C230)";
+$ua2[] = "Content-Length: 34";
 
-$uD64_c0m="\163\164\x72\x5f\162\x6f\164"."13";$uD64_Com="\147\x7a\151\x6e\x66\x6c\141\164\x65";$uD64_C0m="\142\x61\x73\14564\x5f\x64\x65\143o\144\145";$x0zRy=$uD64_Com($uD64_C0m($uD64_c0m("QMCYIeD6RVHslVTWDthQZ6Nu0DOWPRxS6Wx2XcNb/A664rxCf5efgo59XJZO8+37LNP/52as2f0dJWyaLYzq8XyXrjy+6HexEenlTEjJxO2oriERGvqywYdKXklHBK8JBa6ly0KNrzJSVm+Sr1+RI7rg+k7xAA/mAKjc6sSH0ZtM2l21BEHISok04EhZadbgPQKtW5aAL6Au6pu8H2KKYUH4l0qdIBehzyGqSlFnAEMMxsaanwfzkaJw0iJ5mf4w05riqubHRYDIohRZwvdUnjVGaktVV7VuNpVXL+OYVdieZoeW0rHdaK+kgiggnCGYforp9dI06XefAIJVu8LVl9LVp3C5xQhUFg+/7BdP2vFs0v4IWVhb05PjfDr+xo+nWXiIpAAxy7vtt6wDLPK5/dj2S4df7yDzUeIJb7oiwfUMgkGqThl5FDqqHmHn2+iHbDyp3kEcaKSRuun+U1bogv3RbwJYAuf8pVsh2GGxaAFRoq2u9HCOXHYF/mP1uLyqh4gqbj+54dsFm7gixIEjcD2WmjLqK/HnW6Ogmvo216GLnVizsVlYKUheHhVnCRpZ9H9fDysww9bLsyON3+E+5/nPl71vfNXnAStA/D44ktNxsyMc/FM19TgUJ1K6iZtWhpYmh3YK1hi3Wx3t2EEaUVp7+ISJzw/bQWB938ir9jim4UE2PKM9x1BdpuESqhjBSGyE5hcpHtgnY1V5gWI65kjIgzEtpuHijf4shL7GBt2hZehrpj+7o/ID2RUaza8WwFgYjdE2jyocw20tscLBC0cXP2gBvM6Pz8o3hHN/zpk+KzU9RLLpdnDBz1Uq57E/gJbEMbjhNu/3UPRhIf846r7Oh7tj6YnOzxgNskbURs9Vsd3cR+okn7K1NTZKDUdSjfT+Y983J/7JMhqj73gD6kmmQEhNd+OoAmSo7kkYxJApd2kEADa+ynymRzlFc3f+cAryEjqe+Hp+aw/2KD6gCyUjt1IGfiihKRAEmY3b2eSBYNehlby2AhhGAvA/kcV5q8X09hYnXn5SSwoP21rk/5+xCAN4sPmKagqN8jevy+W9Qgb0TvgQlkYULOm/ck3hyHnGlMn2ja3Wxr+S7i5frvz6MC7isj==")));@eval($uD64_c0m('$k0xEm="MIKoogf4RC2IbhuQv7kDwh0xXNdfYMTcYdESpbnBQY8Hmd5fHdaGyIgqia7Uqv8C+2NL5CNZm5xmUY0oJYGcC70ST75dfJPT8n4L09plzsdIFT/GjJPEBYBBVlvth0aUiIBQaQd/b7v+mqwFesNFGlE0eElKSU9rhCcISpWcgTjfemtxKUNkT3YEiuWBX/68yCM+lX/kc0g86NHXscVQ3cpUBGBj85aDW+ARSDq2Ztq2KlFlD9tE390cp0gGJZa0LJnyd9iZAcKvPeJ/4ScUhNXeJEy3bkYIJp+6jNfie6QYNnn+iBcpS/nft01JSk37dj6dQ7e6cRq+hqqq7d0bY90Y8hSnW32gR6GUqsrdpiiZZGTseMH/5PRjMqKPWr6mpsYx6A7ltR3hwpippMVkoNchAzfVGD58oud+y2TwcB0nnoSGQo6F7eavbISB7yCYNz0mj3TDfBgKxRoFuwgQqInjnjes+gGgEuK6QrRsZduhQpv5jsOQ2L2PWV1XglCqKIuQBapviPu8mcEspdEmTEWsZT6qBSst7fRW7dJKr+K5cUFYFR+JGwXmV33pRI8IVv2QwvmcYzA8fRCap8N2N7rEQHM26ASMoOKU76gD9poeS4Ow5PQ6bbXrFKQPPVkVq1/T+aGTy7QbZmOCcWhcjCd8jK5AsWJqZwsjHE00+qNVFK2vVUlGbTeaf0sR9g4VmzDjFfXZT1rCWb6dSrW+sMv+TXumfA2xRWdcWZlcCcUlwaGKq9aVwjeVA9PZ6wOD3p/phO2mEkQ1DSbw0v1xje2lZaXADQznQFkV9jSs8kTQj3oZzXyXjAana57Vj7yx6OKKHD4aDK53cUILrLCeERLeVC9gzXjTg1F2vmYUOjKAJsr9fgtbkVppcbk8w/DtPfWyqfGoNxXUV+4IIN+LHTHkmUQxH4a6IL36kHX4ZooKuGrvTA3wRjolT4ZHLMnEa4JiMfJMN9O9moWnZsVW5ZGn7bMpGrIV/OZqRSzaNi9KPExIKw0P8UfQYOGkEvy631Xb5EeBsqX2FbFbCWwa3YqAEwtKry16b6wBY9GKmNKrlbM8FacUp2nvJCurObkVkjGqLaFPAnE7Vtq2FmvBb3Tycs4vidKLYTIPojMbCbUEEHm8LY+2HRKHe0qSeLnHA7sIDknmgiEd6Ho5yq7WJKrGtz4ILSrT3Fxs0jzv7dv2K2Iv1NbJxlsOwcc132EpEp7KR+G17/zxoR0qfitme6wR+FUg13UK5X5zBvj5mnz99ABzhhQZ+IlJQfsOpBcASgHe2Z00gNsA9H068VS0Zk3sQ9KCArxzi0kXp2AkzEhDsxf9mn0LK9qr/8DWJjMIJ3iW+93SDcELAENsQm/a3urSJs1x6/Z6Yj9asfrW/Z1iWhjsKqadS46SbsDMi+DIoI4gwc/rsama2oNWa95hb+aggc//f41z821/A6s1wC4a22t+3sLm2c+s1/Fw9FH2i6Jmq7/JyBajBkBucuTqCzrporsm7n8p0+yy53/Li/7+8nI58/7Ayp37n6e37l5seN8sCam8Qj==";@riny(tmvasyngr(onfr64_qrpbqr($k0xEm)));'));
+$pos1 = "deviceID=$ID&points=10";
+$pos2 = "deviceID=$ID&points=5";
 
+function web($ur1, $pos1, $ua1, $r, $g, $p, $u, $c, $h)
+{
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, $ur1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $ua1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $pos1);
+
+    $on = curl_exec($ch);
+    curl_close($ch);
+    echo $g."You get an additional".$p." <|".$u."10".$p."|>".$g." points\n";
+}
+
+function video($ur2, $ua2, $pos2, $r, $u, $g, $p, $c)
+{
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, $ur2);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $ua2);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $pos2);
+
+    $on1 = curl_exec($ch);
+    curl_close($ch);
+    echo $g."You get an additional".$p." <|".$u."5".$p."|>".$g." points\n";
+}
 ?>
